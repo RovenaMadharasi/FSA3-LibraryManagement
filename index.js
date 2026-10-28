@@ -6,6 +6,13 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
+app.get("/", (req, res) => {
+    res.status(200).json({
+        message: "Library Management API is running successfully!"
+    });
+});
+
+
 app.use("/api/library", libraryRoutes);
 
 app.use((req, res) => {
